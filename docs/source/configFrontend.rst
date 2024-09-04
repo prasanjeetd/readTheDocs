@@ -29,9 +29,38 @@ Create an S3 Bucket
    :height: 200px
    :align: center
 
+5. Upload Build Files
+
+- After the bucket is created, go inside the bucket in the AWS Management Console.
+
+- Upload the build files and folders of the project. To build the project, run the following command:
+
+   .. code-block:: console
+
+      $ npm run build
+
+- Once the build process is complete, upload the contents of the `build` directory to the S3 bucket.
+
+6. Configure Static Website Hosting
+
+
+- Go to the **Properties** section of the S3 bucket.
+
+- Click the **Edit** button in the **Static website hosting** section.
+
+- Enable the **Static website hosting** setting.
+
+- Configure the index document (e.g., `index.html`) and error document (e.g., `error.html`) as needed.
 
 
 
+ -**Save the changes**.
+
+.. image:: images/image2.png
+   :alt: Description of the image
+   :width: 800px
+   :height: 700px
+   :align: center
 
 - **Set Up CloudFront Distribution And Configure Route 53 for DNS Management**:
 
