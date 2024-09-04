@@ -65,7 +65,67 @@ Create and Configure S3 Bucket
    :height: 700px
    :align: center
 
-**Set Up CloudFront Distribution And Configure Route 53 for DNS Management**:
+8. Update the Bucket policy in Permissions 
+
+      .. code-block:: console
+         {
+             "Version": "2012-10-17",
+             "Statement": [
+                 {
+                     "Sid": "PublicReadGetObject",
+                     "Effect": "Allow",
+                     "Principal": "*",
+                     "Action": [
+                         "s3:GetObject"
+                     ],
+                     "Resource": [
+                         "arn:aws:s3:::Bucket-Name/*"
+                     ]
+                 }
+             ]
+         }
+
+Set Up CloudFront Distribution And Configure Route 53 for DNS Management
+--------------------------------------------------------------------------
+
+**Configure DNS and SSL Certificates**
+
+1. **Create a Hosted Zone in Route 53**
+
+   - Go to the **Route 53** service in the AWS Management Console.
+
+   - Click on **Hosted zones**.
+
+   - Click on **Create hosted zone**.
+
+   - Enter your domain name (e.g., `example.com`) and select the type of hosted zone (usually **Public hosted zone**).
+
+   - Click **Create** to create the hosted zone.
+
+2. **Request a Public Certificate**
+
+   - Go to the **Certificate Manager** service in the AWS Management Console.
+
+   - Click on **Certificates** in the left navigation pane.
+
+   - Click on **Request a certificate**.
+
+   - Select **Request a public certificate** and click **Next**.
+
+   - Enter your domain name (e.g., `example.com`) and any additional domain names you want to include.
+
+   - Click **Next** to proceed.
+
+   - Choose the validation method (e.g., **DNS validation** or **Email validation**) and follow the instructions to complete the validation process.
+
+   - Click **Next**, review the request, and click **Confirm and request**.
+
+   - Wait for the certificate to be issued. You will receive a notification once it’s ready.
+
+
+**Create CloudFront Distribution**:
+
+
 
 
 
