@@ -77,62 +77,62 @@ The backend is deployed on Amazon EC2. Here are the instructions to deploy a Nod
 
 Ubuntu 20.04 servers can use the UFW (Uncomplicated Firewall) to ensure only connections to certain services are allowed. Here’s how to set up a basic firewall using UFW:
 
-   .. note::
-   
-       If your servers are running on DigitalOcean, you can optionally use DigitalOcean Cloud Firewalls instead of UFW. It is recommended to use only one     firewall at a time to avoid conflicting rules that may be difficult to debug.
+            .. note::
+            
+                If your servers are running on DigitalOcean, you can optionally use DigitalOcean Cloud Firewalls instead of UFW. It is recommended to use only one    firewall at a time to avoid conflicting rules that may be difficult to debug.
 
-  1. **Check Available Applications**
-  
+   1. **Check Available Applications**
+   
      Applications can register their profiles with UFW upon installation. These profiles allow UFW to manage these applications by name. OpenSSH, the service allowing you to connect to your server, has a profile registered with UFW. To see this, type:
-  
+   
      .. code-block:: console
-  
+   
         $ ufw app list
-  
+   
      **Output:**
-  
+   
      .. code-block::
-  
+   
         Available applications:
           OpenSSH
-  
-  2. **Allow SSH Connections**
-  
+   
+   2. **Allow SSH Connections**
+   
      To ensure that the firewall allows SSH connections so you can log back in next time, allow these connections by typing:
-  
+   
      .. code-block:: console
-  
+   
         $ ufw allow OpenSSH
-  
-  3. **Enable the Firewall**
-  
+   
+   3. **Enable the Firewall**
+   
      Enable the firewall by typing:
-  
+   
      .. code-block:: console
-  
+   
         $ ufw enable
-  
+   
      Type `y` and press **ENTER** to proceed.
-  
-  4. **Verify Firewall Status**
-  
+   
+   4. **Verify Firewall Status**
+   
      To confirm that SSH connections are still allowed and check the firewall status, type:
-  
+   
      .. code-block:: console
-  
+   
         $ ufw status
-  
+   
      **Output:**
-  
+   
      .. code-block::
-  
+   
         Status: active
-  
+   
         To                         Action      From
         --                         ------      ----
         OpenSSH                    ALLOW       Anywhere
         OpenSSH (v6)               ALLOW       Anywhere (v6)
-  
+   
 
 
 
