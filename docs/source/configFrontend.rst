@@ -135,6 +135,7 @@ Set Up CloudFront Distribution And Configure Route 53 for DNS Management
 3. Click on **Create Distribution**.
 
 4. Under the **Web** section, click on **Get Started**.
+
    .. image:: images/unnamed2.png
       :alt: Description of the image
       :width: 800px
