@@ -23,7 +23,7 @@ Create an S3 Bucket
 
 5. Configure bucket settings as needed.
 
-.. image:: docs/source/images/unnamed.png
+.. image:: source/images/unnamed.png
    :alt: Description of the image
    :width: 600px
    :height: 400px
