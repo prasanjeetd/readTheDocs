@@ -77,8 +77,8 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
 3. **Set-Up your Server**
 ----------------------------------
 
-   1. Configure UFW Firewall
-   ----------------------------------
+   1. **Configure UFW Firewall**
+  
    
    
       Ubuntu 20.04 servers can use the UFW (Uncomplicated Firewall) to ensure only connections to certain services are allowed. Here’s how to set up a basic firewall using UFW:
@@ -87,7 +87,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
                
                    If your servers are running on DigitalOcean, you can optionally use DigitalOcean Cloud Firewalls instead of UFW. It is recommended to use only one    firewall at a time to avoid conflicting rules that may be difficult to debug.
    
-      1. **Check Available Applications**
+      1. Check Available Applications
       
         Applications can register their profiles with UFW upon installation. These profiles allow UFW to manage these applications by name. OpenSSH, the service allowing you to connect to your server, has a profile registered with UFW. To see this, type:
       
@@ -102,7 +102,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
            Available applications:
              OpenSSH
       
-      2. **Allow SSH Connections**
+      2. Allow SSH Connections
       
         To ensure that the firewall allows SSH connections so you can log back in next time, allow these connections by typing:
       
@@ -110,7 +110,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
            $ ufw allow OpenSSH
       
-      3. **Enable the Firewall**
+      3. Enable the Firewall
       
         Enable the firewall by typing:
       
@@ -120,7 +120,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
         Type `y` and press **ENTER** to proceed.
       
-      4. **Verify Firewall Status**
+      4. Verify Firewall Status
       
         To confirm that SSH connections are still allowed and check the firewall status, type:
       
@@ -140,11 +140,11 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
            OpenSSH (v6)               ALLOW       Anywhere (v6)
    
    
-   2. Install and Configure Nginx
-   ----------------------------------
+   2. **Install and Configure Nginx**
    
    
-   **Step 1 – Installing Nginx**
+   
+   *Step 1 – Installing Nginx*
    
    Because Nginx is available in Ubuntu’s default repositories, you can install it using the `apt` packaging system. 
    
@@ -162,7 +162,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
    
       After accepting the procedure, `apt` will install Nginx and any required dependencies to your server.
    
-   **Step 2 – Adjusting the Firewall**
+   *Step 2 – Adjusting the Firewall*
    
    Before testing Nginx, adjust the firewall software to allow access to the service. Nginx registers itself as a service with UFW upon installation, making it straightforward to allow Nginx access.
    
@@ -215,7 +215,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
          OpenSSH (v6)               ALLOW       Anywhere (v6)             
          Nginx HTTP (v6)            ALLOW       Anywhere (v6)
    
-   **Step 3 – Checking Your Web Server**
+   *Step 3 – Checking Your Web Server*
    
    At the end of the installation process, Ubuntu 20.04 starts Nginx. The web server should already be up and running.
    
@@ -264,9 +264,61 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
          :height: 150px
          :align: center
 
+   *Step 4 – Managing the Nginx Process*
 
 
+Now that you have your web server up and running, let’s review some basic management commands.
 
+1. Stop the Web Server
+
+   To stop your web server, type:
+
+   .. code-block:: console
+
+      $ sudo systemctl stop nginx
+
+2. Start the Web Server
+
+   To start the web server when it is stopped, type:
+
+   .. code-block:: console
+
+      $ sudo systemctl start nginx
+
+3. Restart the Web Server
+
+   To stop and then start the service again, type:
+
+   .. code-block:: console
+
+      $ sudo systemctl restart nginx
+
+4. Reload the Configuration
+
+   If you are only making configuration changes, Nginx can often reload without dropping connections. To reload Nginx, type:
+
+   .. code-block:: console
+
+      $ sudo systemctl reload nginx
+
+5. Disable Automatic Start at Boot
+
+   By default, Nginx is configured to start automatically when the server boots. If you do not want this behavior, you can disable it by typing:
+
+   .. code-block:: console
+
+      $ sudo systemctl disable nginx
+
+6. Re-enable Automatic Start at Boot
+
+   To re-enable the service to start up at boot, type:
+
+   .. code-block:: console
+
+      $ sudo systemctl enable nginx
+
+
+ 3. **Installing Node.js**
 
 
 
