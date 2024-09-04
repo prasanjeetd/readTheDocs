@@ -32,7 +32,7 @@ Create and Configure S3 Bucket
    :align: center
 
 5. **Upload Build Files**
-     -----------------
+----------------------------------
 
 - After the bucket is created, go inside the bucket in the AWS Management Console.
 
