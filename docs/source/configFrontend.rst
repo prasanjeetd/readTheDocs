@@ -1,33 +1,25 @@
 Config_Frontend
-=====
+===============
 
-.. _installation:
+.. _frontend_deploy:
 
-Installation
-------------
+Frontend Deployment
+===================
 
-To use Lumache, first install it using pip:
+The restaurant app is deployed on AWS services using S3 Bucket, CloudFront, and Route 53. Below are the step-by-step instructions for deployment:
 
-.. code-block:: console
+1. **Create an S3 Bucket for Static Files**:
+------------------------------------------------
 
-   (.venv) $ pip install lumache
 
-Creating recipes
-----------------
 
-To retrieve a list of random ingredients,
-you can use the ``lumache.get_random_ingredients()`` function:
 
-.. autofunction:: lumache.get_random_ingredients
+2. **Set Up CloudFront Distribution And Configure Route 53 for DNS Management**:
+----------------------------------------------------------------------------------
 
-The ``kind`` parameter should be either ``"meat"``, ``"fish"``,
-or ``"veggies"``. Otherwise, :py:func:`lumache.get_random_ingredients`
-will raise an exception.
 
-.. autoexception:: lumache.InvalidKindError
 
-For example:
 
->>> import lumache
->>> lumache.get_random_ingredients()
-['shells', 'gorgonzola', 'parsley']
+
+
+
