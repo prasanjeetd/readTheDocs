@@ -32,17 +32,17 @@ Create and Configure S3 Bucket
    :align: center
 
 6. Upload Build Files
-
-
-- After the bucket is created, go inside the bucket in the AWS Management Console.
-
-- Upload the build files and folders of the project. To build the project, run the following command:
-
-   .. code-block:: console
-
-      $ npm run build
-
-- Once the build process is complete, upload the contents of the `build` directory to the S3 bucket.
+   
+   
+   - After the bucket is created, go inside the bucket in the AWS Management Console.
+   
+   - Upload the build files and folders of the project. To build the project, run the following command:
+   
+      .. code-block:: console
+   
+         $ npm run build
+   
+   - Once the build process is complete, upload the contents of the `build` directory to the S3 bucket.
 
 7. Configure Static Website Hosting
    
@@ -93,7 +93,7 @@ Set Up CloudFront Distribution And Configure Route 53 for DNS Management
 
 **Configure DNS and SSL Certificates**
 
-1. **Create a Hosted Zone in Route 53**
+1. Create a Hosted Zone in Route 53
 
    - Go to the **Route 53** service in the AWS Management Console.
 
@@ -105,7 +105,7 @@ Set Up CloudFront Distribution And Configure Route 53 for DNS Management
 
    - Click **Create** to create the hosted zone.
 
-2. **Request a Public Certificate**
+2. Request a Public Certificate
 
    - Go to the **Certificate Manager** service in the AWS Management Console.
 
