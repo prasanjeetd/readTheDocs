@@ -28,7 +28,7 @@ Create and Configure S3 Bucket
 .. image:: images/unnamed.png
    :alt: Description of the image
    :width: 800px
-   :height: 200px
+   :height: 150px
    :align: center
 
 6. Upload Build Files
@@ -62,7 +62,7 @@ Create and Configure S3 Bucket
    .. image:: images/image2.png
       :alt: Description of the image
       :width: 800px
-      :height: 700px
+      :height: 500px
       :align: center
 
 8. Update the Bucket policy in Permissions 
@@ -139,7 +139,7 @@ Set Up CloudFront Distribution And Configure Route 53 for DNS Management
    .. image:: images/unnamed2.png
       :alt: Description of the image
       :width: 800px
-      :height: 200px
+      :height: 150px
       :align: center
 
 Configure Distribution Settings
@@ -159,12 +159,12 @@ Configure Distribution Settings
       .. image:: images/unnamed4.png
             :alt: Description of the image
             :width: 800px
-            :height: 700px
+            :height: 500px
             :align: center
       .. image:: images/unnamed6.png
             :alt: Description of the image
             :width: 800px
-            :height: 700px
+            :height: 500px
             :align: center
 
 
