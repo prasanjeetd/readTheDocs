@@ -66,24 +66,27 @@ Create and Configure S3 Bucket
    :align: center
 
 8. Update the Bucket policy in Permissions 
+  .. code-block:: json
 
-      .. code-block:: console
-         {
-             "Version": "2012-10-17",
-             "Statement": [
-                 {
-                     "Sid": "PublicReadGetObject",
-                     "Effect": "Allow",
-                     "Principal": "*",
-                     "Action": [
-                         "s3:GetObject"
-                     ],
-                     "Resource": [
-                         "arn:aws:s3:::Bucket-Name/*"
-                     ]
-                 }
-             ]
-         }
+     {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "PublicReadGetObject",
+                "Effect": "Allow",
+                "Principal": "*",
+                "Action": [
+                    "s3:GetObject"
+                ],
+                "Resource": [
+                    "arn:aws:s3:::Bucket-Name/*"
+                ]
+            }
+        ]
+     }
+
+  Replace `Bucket-Name` with your actual bucket name.
+
 
 Set Up CloudFront Distribution And Configure Route 53 for DNS Management
 --------------------------------------------------------------------------
