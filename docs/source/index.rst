@@ -22,10 +22,16 @@ Tech Stack
 - **Language:** TypeScript
 
 Project Repository
-------------------
+==================
+
 The project is divided into two repositories:
-- **Frontend Repository:** [https://github.com/DHIRAJJADHAV17/restroSearch_frontend]
-- **Backend Repository:** [https://github.com/DHIRAJJADHAV17/restroSearch_backend]
+
+- **Frontend Repository:** 
+  `https://github.com/DHIRAJJADHAV17/restroSearch_frontend <https://github.com/DHIRAJJADHAV17/restroSearch_frontend>`_
+
+- **Backend Repository:** 
+  `https://github.com/DHIRAJJADHAV17/restroSearch_backend <https://github.com/DHIRAJJADHAV17/restroSearch_backend>`_
+
 
 Check out the :doc:`usage` section for further information, including
 how to :ref:`installation` the project.
