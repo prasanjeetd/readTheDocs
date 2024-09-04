@@ -22,7 +22,8 @@ Create an S3 Bucket
 4. Give your bucket a name (e.g., `my-restaurant-app-static`) and select a region.
 
 5. Configure bucket settings as needed.
-.. image:: /docs/source/images/unnamed.png
+
+.. image:: /images/unnamed.png
    :alt: Description of the image
    :width: 600px
    :height: 400px
