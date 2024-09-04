@@ -31,12 +31,12 @@ Create and Configure S3 Bucket
    :height: 200px
    :align: center
 
-5. **Upload Build Files**
-----------------------------------
+6. Upload Build Files
 
-- After the bucket is created, go inside the bucket in the AWS Management Console.
 
-- Upload the build files and folders of the project. To build the project, run the following command:
+-- After the bucket is created, go inside the bucket in the AWS Management Console.
+
+-- Upload the build files and folders of the project. To build the project, run the following command:
 
    .. code-block:: console
 
@@ -44,7 +44,7 @@ Create and Configure S3 Bucket
 
 - Once the build process is complete, upload the contents of the `build` directory to the S3 bucket.
 
-6. Configure Static Website Hosting
+7. Configure Static Website Hosting
 
 
 - Go to the **Properties** section of the S3 bucket.
