@@ -46,5 +46,7 @@ Contents
 .. toctree::
 
    usage
-   api
    configFrontend
+   configBackend
+   
+   
