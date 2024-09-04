@@ -1,4 +1,4 @@
-configFrontend
+Config_Frontend
 =====
 
 .. _installation:
