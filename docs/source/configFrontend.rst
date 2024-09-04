@@ -45,25 +45,25 @@ Create and Configure S3 Bucket
 - Once the build process is complete, upload the contents of the `build` directory to the S3 bucket.
 
 7. Configure Static Website Hosting
-
-
-- Go to the **Properties** section of the S3 bucket.
-
-- Click the **Edit** button in the **Static website hosting** section.
-
-- Enable the **Static website hosting** setting.
-
-- Configure the index document (e.g., `index.html`) and error document (e.g., `error.html`) as needed.
-
-
-
- - **Save the changes**.
-
-.. image:: images/image2.png
-   :alt: Description of the image
-   :width: 800px
-   :height: 700px
-   :align: center
+   
+   
+   - Go to the **Properties** section of the S3 bucket.
+   
+   - Click the **Edit** button in the **Static website hosting** section.
+   
+   - Enable the **Static website hosting** setting.
+   
+   - Configure the index document (e.g., `index.html`) and error document (e.g., `error.html`) as needed.
+   
+   
+   
+    - **Save the changes**.
+   
+   .. image:: images/image2.png
+      :alt: Description of the image
+      :width: 800px
+      :height: 700px
+      :align: center
 
 8. Update the Bucket policy in Permissions 
   .. code-block:: json
