@@ -1,10 +1,14 @@
 Welcome to Find_Restro 's documentation!
 ===================================
 
-**Find_Restro** (/Find'Restro/) 
+**Find_Restro**
+================
+
 Project Overview
-----------------
+================
+
 The restaurant app allows users to:
+
 - Search for restaurants by name and location.
 - View detailed information and reviews about specific restaurants.
 - Add their own restaurants.
