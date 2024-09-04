@@ -251,10 +251,19 @@ At the end of the installation process, Ubuntu 20.04 starts Nginx. The web serve
    You should receive the default Nginx landing page.
 
    .. image:: images/nginx.png
-   :alt: Description of the image
-   :width: 800px
-   :height: 150px
-   :align: center
+      :alt: Description of the image
+      :width: 800px
+      :height: 150px
+      :align: center
+
+
+
+
+
+
+
+
+
 
 
 
