@@ -1,4 +1,4 @@
-Usage
+configFrontend
 =====
 
 .. _installation:
