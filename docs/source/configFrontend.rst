@@ -34,9 +34,9 @@ Create and Configure S3 Bucket
 6. Upload Build Files
 
 
--- After the bucket is created, go inside the bucket in the AWS Management Console.
+- After the bucket is created, go inside the bucket in the AWS Management Console.
 
--- Upload the build files and folders of the project. To build the project, run the following command:
+- Upload the build files and folders of the project. To build the project, run the following command:
 
    .. code-block:: console
 
