@@ -128,6 +128,71 @@ Set Up CloudFront Distribution And Configure Route 53 for DNS Management
 
 **Create CloudFront Distribution**:
 
+1. Go to the **AWS Management Console**.
+
+2. Navigate to the **CloudFront** service.
+
+3. Click on **Create Distribution**.
+
+4. Under the **Web** section, click on **Get Started**.
+   .. image:: images/unnamed2.png
+      :alt: Description of the image
+      :width: 800px
+      :height: 200px
+      :align: center
+
+Configure Distribution Settings
+
+1. Origin Settings:
+
+   - **Origin Domain Name**: Select your S3 bucket from the dropdown list.
+
+   - **Origin Path**: Leave empty.
+
+   - **Origin ID**: This will be filled automatically.
+
+   - **Restrict Bucket Access**: Choose **Yes** if you want to restrict access to the bucket through CloudFront only.
+
+   - **Origin Access Control Policy**: Create or select an existing policy if restricted access is chosen.
+     
+      .. image:: images/unnamed4.png
+            :alt: Description of the image
+            :width: 800px
+            :height: 700px
+            :align: center
+      .. image:: images/unnamed6.png
+            :alt: Description of the image
+            :width: 800px
+            :height: 700px
+            :align: center
+
+
+2. Default Cache Behavior Settings:
+
+   - **Viewer Protocol Policy**: Set to **Redirect HTTP to HTTPS** or **HTTPS Only**.
+
+   - **Allowed HTTP Methods**: Select **GET, HEAD**.
+
+3. Distribution Settings:
+
+   - **Price Class**: Choose based on your geographic needs.
+
+   - **Alternate Domain Names (CNAMEs)**: Add your custom domain if using one.
+
+   - **SSL Certificate**: Select **Default CloudFront Certificate** or upload a custom certificate if using a custom domain.
+
+Create the Distribution
+
+   1. Review the settings and click **Create Distribution**.
+   
+   2. It may take some time for CloudFront to deploy the distribution.
+
+Update DNS (if using custom domain)
+   - Go to your DNS provider and set up a **CNAME record** pointing to the CloudFront distribution domain name.
+
+
+**Either use Distribution domain name or Alternate domain names to access the website**
+
 
 
 
