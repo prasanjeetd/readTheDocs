@@ -28,7 +28,7 @@ The backend is deployed on Amazon EC2. Here are the instructions to deploy a Nod
 
 2. **Connect to the EC2 Instance**
 
-  To connect to the instance, go to the **Connect** tab in the AWS Management Console. You can connect using either EC2 Instance Connect or an SSH client.
+To connect to the instance, go to the **Connect** tab in the AWS Management Console. You can connect using either EC2 Instance Connect or an SSH client.
 
 **For Ubuntu or macOS Users:**
   
@@ -75,7 +75,7 @@ The backend is deployed on Amazon EC2. Here are the instructions to deploy a Nod
 1. Configure UFW Firewall
 
 
-Ubuntu 20.04 servers can use the UFW (Uncomplicated Firewall) to ensure only connections to certain services are allowed. Here’s how to set up a basic firewall using UFW:
+   Ubuntu 20.04 servers can use the UFW (Uncomplicated Firewall) to ensure only connections to certain services are allowed. Here’s how to set up a basic firewall using UFW:
 
             .. note::
             
@@ -132,8 +132,129 @@ Ubuntu 20.04 servers can use the UFW (Uncomplicated Firewall) to ensure only con
         --                         ------      ----
         OpenSSH                    ALLOW       Anywhere
         OpenSSH (v6)               ALLOW       Anywhere (v6)
-   
 
+2. Install and Configure Nginx
+
+
+**Step 1 – Installing Nginx**
+
+Because Nginx is available in Ubuntu’s default repositories, you can install it using the `apt` packaging system. 
+
+1. Update the local package index to ensure you have the most recent package listings:
+
+   .. code-block:: console
+
+      $ sudo apt update
+
+2. Install Nginx:
+
+   .. code-block:: console
+
+      $ sudo apt install nginx
+
+   After accepting the procedure, `apt` will install Nginx and any required dependencies to your server.
+
+**Step 2 – Adjusting the Firewall**
+
+Before testing Nginx, adjust the firewall software to allow access to the service. Nginx registers itself as a service with UFW upon installation, making it straightforward to allow Nginx access.
+
+1. List the application configurations that UFW knows how to work with:
+
+   .. code-block:: console
+
+      $ sudo ufw app list
+
+   **Output:**
+
+   .. code-block::
+
+      Available applications:
+        Nginx Full
+        Nginx HTTP
+        Nginx HTTPS
+        OpenSSH
+
+   There are three profiles available for Nginx:
+
+   - **Nginx Full**: Opens both port 80 (normal, unencrypted web traffic) and port 443 (TLS/SSL encrypted traffic).
+   - **Nginx HTTP**: Opens only port 80 (normal, unencrypted web traffic).
+   - **Nginx HTTPS**: Opens only port 443 (TLS/SSL encrypted traffic).
+
+   It is recommended to enable the most restrictive profile that will still allow the traffic you’ve configured. For now, we will only need to allow traffic on port 80.
+
+2. Allow HTTP traffic by typing:
+
+   .. code-block:: console
+
+      $ sudo ufw allow 'Nginx HTTP'
+
+3. Verify the change by typing:
+
+   .. code-block:: console
+
+      $ sudo ufw status
+
+   **Output:**
+
+   .. code-block::
+
+      Status: active
+
+      To                         Action      From
+      --                         ------      ----
+      OpenSSH                    ALLOW       Anywhere                  
+      Nginx HTTP                 ALLOW       Anywhere                  
+      OpenSSH (v6)               ALLOW       Anywhere (v6)             
+      Nginx HTTP (v6)            ALLOW       Anywhere (v6)
+
+**Step 3 – Checking Your Web Server**
+
+At the end of the installation process, Ubuntu 20.04 starts Nginx. The web server should already be up and running.
+
+1. Check with the `systemd` init system to make sure the service is running:
+
+   .. code-block:: console
+
+      $ systemctl status nginx
+
+   **Output:**
+
+   .. code-block::
+
+      ● nginx.service - A high performance web server and a reverse proxy server
+         Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+         Active: active (running) since Fri 2020-04-20 16:08:19 UTC; 3 days ago
+           Docs: man:nginx(8)
+       Main PID: 2369 (nginx)
+          Tasks: 2 (limit: 1153)
+         Memory: 3.5M
+         CGroup: /system.slice/nginx.service
+                 ├─2369 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+                 └─2380 nginx: worker process
+
+   This confirms that the service has started successfully.
+
+2. Test Nginx by requesting a page:
+
+   Access the default Nginx landing page by navigating to your server’s IP address. If you do not know your server’s IP address, you can find it using the following command:
+
+   .. code-block:: console
+
+      $ curl -4 icanhazip.com
+
+   When you have your server’s IP address, enter it into your browser’s address bar:
+
+   .. code-block::
+
+      http://your_server_ip
+
+   You should receive the default Nginx landing page.
+
+   .. image:: images/nginx.png
+   :alt: Description of the image
+   :width: 800px
+   :height: 150px
+   :align: center
 
 
 
