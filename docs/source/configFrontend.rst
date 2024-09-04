@@ -25,8 +25,8 @@ Create an S3 Bucket
 
 .. image:: images/unnamed.png
    :alt: Description of the image
-   :width: 600px
-   :height: 400px
+   :width: 800px
+   :height: 200px
    :align: center
 
 
