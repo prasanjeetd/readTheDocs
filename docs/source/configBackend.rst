@@ -77,9 +77,9 @@ The backend is deployed on Amazon EC2. Here are the instructions to deploy a Nod
 
 Ubuntu 20.04 servers can use the UFW (Uncomplicated Firewall) to ensure only connections to certain services are allowed. Here’s how to set up a basic firewall using UFW:
 
-.. note::
-
-    If your servers are running on DigitalOcean, you can optionally use DigitalOcean Cloud Firewalls instead of UFW. It is recommended to use only one     firewall at a time to avoid conflicting rules that may be difficult to debug.
+   .. note::
+   
+       If your servers are running on DigitalOcean, you can optionally use DigitalOcean Cloud Firewalls instead of UFW. It is recommended to use only one     firewall at a time to avoid conflicting rules that may be difficult to debug.
 
   1. **Check Available Applications**
   
