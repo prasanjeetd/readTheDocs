@@ -8,7 +8,25 @@ Frontend Deployment
 
 The restaurant app is deployed on AWS services using S3 Bucket, CloudFront, and Route 53. Below are the step-by-step instructions for deployment:
 
-- **Create an S3 Bucket for Static Files**:
+1 **Create and Configure S3 Bucket**:
+
+Create an S3 Bucket
+====================
+
+1. Go to the AWS Management Console.
+
+2. Navigate to the S3 service.
+
+3. Click on **Create bucket**.
+
+4. Give your bucket a name (e.g., `my-restaurant-app-static`) and select a region.
+
+5. Configure bucket settings as needed.
+.. image:: /path/to/image.png
+   :alt: Description of the image
+   :width: 600px
+   :height: 400px
+   :align: center
 
 
 
