@@ -93,7 +93,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
         .. code-block:: console
       
-           $ ufw app list
+           $ sudo ufw app list
       
         **Output:**
       
@@ -108,7 +108,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
         .. code-block:: console
       
-           $ ufw allow OpenSSH
+           $ sudo ufw allow OpenSSH
       
       3. Enable the Firewall
       
@@ -116,7 +116,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
         .. code-block:: console
       
-           $ ufw enable
+           $ sudo ufw enable
       
         Type `y` and press **ENTER** to proceed.
       
@@ -126,7 +126,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
         .. code-block:: console
       
-           $ ufw status
+           $ sudo ufw status
       
         **Output:**
       
