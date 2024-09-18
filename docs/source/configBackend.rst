@@ -62,9 +62,9 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
   
      .. code-block:: powershell
   
-        $ awskey.pem /reset
-        $ awskey.pem /grant:r "$($env:username):(r)"
-        $ awskey.pem /inheritance:r
+        $ icacls.exe awskey.pem /reset
+        $ icacls.exe awskey.pem /grant:r "$($env:username):(r)"
+        $ icacls.exe awskey.pem /inheritance:r
   
   4. Connect to your instance using its Public DNS:
   
