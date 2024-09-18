@@ -44,13 +44,13 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
   
      .. code-block:: console
   
-        $ chmod 400 "awskey.pem"
+          chmod 400 "awskey.pem"
   
   4. Connect to your instance using its Public DNS:
   
      .. code-block:: console
   
-        $ ssh -i "awskey.pem" ubuntu@ec2-your-public-dns
+          ssh -i "awskey.pem" ubuntu@ec2-your-public-dns
 
 **For Windows Users (Using PowerShell):**
 
@@ -62,9 +62,9 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
   
      .. code-block:: powershell
   
-        $ icacls.exe awskey.pem /reset
-        $ icacls.exe awskey.pem /grant:r "$($env:username):(r)"
-        $ icacls.exe awskey.pem /inheritance:r
+          icacls.exe awskey.pem /reset
+          icacls.exe awskey.pem /grant:r "$($env:username):(r)"
+          icacls.exe awskey.pem /inheritance:r
   
   4. Connect to your instance using its Public DNS:
   
@@ -93,7 +93,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
         .. code-block:: console
       
-           $ sudo ufw app list
+             sudo ufw app list
       
         **Output:**
       
@@ -108,7 +108,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
         .. code-block:: console
       
-           $ sudo ufw allow OpenSSH
+             sudo ufw allow OpenSSH
       
       3. Enable the Firewall
       
@@ -116,7 +116,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
         .. code-block:: console
       
-           $ sudo ufw enable
+             sudo ufw enable
       
         Type `y` and press **ENTER** to proceed.
       
@@ -126,7 +126,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
         .. code-block:: console
       
-           $ sudo ufw status
+             sudo ufw status
       
         **Output:**
       
@@ -152,13 +152,13 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
          .. code-block:: console
       
-            $ sudo apt update
+              sudo apt update
       
       2. Install Nginx:
       
          .. code-block:: console
       
-            $ sudo apt install nginx
+              sudo apt install nginx
       
          After accepting the procedure, `apt` will install Nginx and any required dependencies to your server.
       
@@ -170,7 +170,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
          .. code-block:: console
       
-            $ sudo ufw app list
+              sudo ufw app list
       
          **Output:**
       
@@ -194,13 +194,13 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
          .. code-block:: console
       
-            $ sudo ufw allow 'Nginx HTTP'
+              sudo ufw allow 'Nginx HTTP'
       
       3. Verify the change by typing:
       
          .. code-block:: console
       
-            $ sudo ufw status
+              sudo ufw status
       
          **Output:**
       
@@ -223,7 +223,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
          .. code-block:: console
       
-            $ systemctl status nginx
+              systemctl status nginx
       
          **Output:**
       
@@ -248,7 +248,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
          .. code-block:: console
       
-            $ curl -4 icanhazip.com
+              curl -4 icanhazip.com
       
          When you have your server’s IP address, enter it into your browser’s address bar:
       
@@ -275,7 +275,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
          .. code-block:: console
       
-            $ sudo systemctl stop nginx
+              sudo systemctl stop nginx
       
       2. Start the Web Server
       
@@ -283,7 +283,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
          .. code-block:: console
       
-            $ sudo systemctl start nginx
+              sudo systemctl start nginx
       
       3. Restart the Web Server
       
@@ -291,7 +291,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
          .. code-block:: console
       
-            $ sudo systemctl restart nginx
+              sudo systemctl restart nginx
       
       4. Reload the Configuration
       
@@ -299,7 +299,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
          .. code-block:: console
       
-            $ sudo systemctl reload nginx
+              sudo systemctl reload nginx
       
       5. Disable Automatic Start at Boot
       
@@ -307,7 +307,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
          .. code-block:: console
       
-            $ sudo systemctl disable nginx
+              sudo systemctl disable nginx
       
       6. Re-enable Automatic Start at Boot
       
@@ -315,7 +315,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
          .. code-block:: console
       
-            $ sudo systemctl enable nginx
+              sudo systemctl enable nginx
       
       
     3. **Installing Node.js**
@@ -328,14 +328,14 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
          .. code-block:: console
       
-            $ cd ~
-            $ curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
+              cd ~
+              curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
       
          You can inspect the contents of this script with `nano` or your preferred text editor:
       
          .. code-block:: console
       
-            $ nano nodesource_setup.sh
+              nano nodesource_setup.sh
       
       2. *Run the Installation Script*
       
@@ -343,7 +343,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
          .. code-block:: console
       
-            $ sudo bash nodesource_setup.sh
+              sudo bash nodesource_setup.sh
       
          The PPA will be added to your configuration, and your local package cache will be updated automatically.
       
@@ -361,7 +361,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
          .. code-block:: console
       
-            $ node -v
+              node -v
             Output: v14.4.0
       
          **Note**: When installing from the NodeSource PPA, the Node.js executable is called `nodejs`, rather than `node`.
@@ -372,7 +372,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
          .. code-block:: console
       
-            $ npm -v
+              npm -v
             Output: 6.14.5
       
       6. *Install Build Tools*
@@ -381,7 +381,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
       
          .. code-block:: console
       
-            $ sudo apt install build-essential
+              sudo apt install build-essential
       
       You now have the necessary tools to work with `npm` packages that require compiling code from source.
       
@@ -396,8 +396,8 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
 
    .. code-block:: console
 
-      $ cd ~
-      $ nano hello.js
+        cd ~
+        nano hello.js
 
    Add the following code to `hello.js`:
 
@@ -413,7 +413,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
 
    .. code-block:: console
 
-      $ git clone https://github.com/username/repository.git
+        git clone https://github.com/username/repository.git
 
    This will download the project files into a new directory.
 
