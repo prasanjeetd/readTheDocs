@@ -329,7 +329,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
          .. code-block:: console
       
               cd ~
-              curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
+              curl -sL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh
       
          You can inspect the contents of this script with `nano` or your preferred text editor:
       
