@@ -1,19 +1,19 @@
 
 Deploying a Next.js App to ECS Using ECR
-========================================
+=========================================
 
 This guide provides a step-by-step process to deploy a Next.js application to Amazon Elastic Container Service (ECS) using Amazon Elastic Container Registry (ECR).
 
-Prerequisites
-=============
+**Prerequisites**
+------------------
 Before proceeding, ensure you have the following:
 - **AWS account** with necessary permissions for ECS, ECR, and IAM.
 - **AWS CLI** installed and configured with your credentials.
 - **Docker** installed on your local machine.
 - **Next.js application** to containerize and deploy.
 
-Step 1: Set Up ECR (Elastic Container Registry)
-================================================
+Step 1: ***Set Up ECR (Elastic Container Registry)**
+-----------------------------------------------------
 Create a repository in ECR to store your Docker images.
 
 1. Log in to the AWS Console.
@@ -21,7 +21,7 @@ Create a repository in ECR to store your Docker images.
 3. Select **Create Repository**.
 4. Give your repository a name (e.g., `nextjs-app`) and configure other settings as needed.
 5. Click **Create Repository**.
-6. Note down the repository URI, which will be needed for tagging and pushing your Docker image.
+6. Now open the repository and press ** view push commands** follow the commands after you done with the step 2 part.
 
 Step 2: Create Dockerfile for Next.js Application
 =================================================
@@ -67,57 +67,23 @@ Here is a sample `Dockerfile`:
    # Start the application
    CMD ["npm", "start"]
 
-Step 3: Build and Tag the Docker Image
-=======================================
-1. Build the Docker image locally.
+Step 3: run all commands that gets popup after pressing view push commands
+==========================================================================
 
-   .. code-block:: bash
-
-      docker build -t nextjs-app .
-
-2. Tag the Docker image with the ECR repository URI:
-
-   .. code-block:: bash
-
-      docker tag nextjs-app:latest <account-id>.dkr.ecr.<region>.amazonaws.com/nextjs-app:latest
-
-Step 4: Push Docker Image to ECR
-=================================
-1. Authenticate Docker with ECR using AWS CLI:
-
-   .. code-block:: bash
-
-      aws ecr get-login-password --region <region> | docker login --username AWS --password-stdin <account-id>.dkr.ecr.<region>.amazonaws.com
-
-2. Push the Docker image to your ECR repository:
-
-   .. code-block:: bash
-
-      docker push <account-id>.dkr.ecr.<region>.amazonaws.com/nextjs-app:latest
-
-Step 5: Set Up ECS Cluster
+Step 4: Set Up ECS Cluster
 ===========================
 1. Log in to the AWS Console.
 2. Navigate to **ECS** (Elastic Container Service).
-3. Select **Create Cluster**.
-4. Choose the **EC2 Linux + Networking** option (or Fargate if preferred) and click **Next**.
-5. Configure the cluster and select appropriate instance type, VPC, and other settings.
-6. Click **Create**.
+3. Select **Create Cluster** and give cluster a name.
+4. Choose the  option ( Fargate or EC2 if preferred) .
+5. Click **Create**.
 
 Step 6: Create ECS Task Definition
 ===================================
 1. In the ECS Console, navigate to **Task Definitions**.
-2. Select **Create new Task Definition**.
+2. Select **Create new Task Definition** Specify a unique task definition family name.
 3. Choose either **EC2** or **Fargate** depending on your setup.
-4. Provide the required configurations:
-   - **Task role**: Choose an existing role or create a new one.
-   - **Network Mode**: Select the appropriate network mode (usually `awsvpc`).
-   - **Container definitions**: Click **Add container**.
-     - Set the **Container name** (e.g., `nextjs-app`).
-     - Set the **Image**: Use the ECR image URI (e.g., `<account-id>.dkr.ecr.<region>.amazonaws.com/nextjs-app:latest`).
-     - Set the **Port mappings**: Map port `3000` to `80`.
-     - Set memory and CPU as needed.
-   - **Volumes**: Configure any necessary volumes.
+4. Provide the required configurations if needed can set Environment variables also.
 5. Click **Create**.
 
 Step 7: Create ECS Service
