@@ -27,10 +27,10 @@ Project Repository
 The project is divided into two repositories:
 
 - **Frontend Repository:** 
-  `https://github.com/DHIRAJJADHAV17/restroSearch_frontend <https://github.com/DHIRAJJADHAV17/restroSearch_frontend>`_
+  `https://github.com/prasanjeetd/gangsofcode-frontend.git <https://github.com/prasanjeetd/gangsofcode-frontend.git>`_
 
 - **Backend Repository:** 
-  `https://github.com/DHIRAJJADHAV17/restroSearch_backend <https://github.com/DHIRAJJADHAV17/restroSearch_backend>`_
+  `https://github.com/prasanjeetd/gangsofcode-backend.git <https://github.com/prasanjeetd/gangsofcode-backend.git>`_
 
 
 Check out the :doc:`usage` section for further information, including
