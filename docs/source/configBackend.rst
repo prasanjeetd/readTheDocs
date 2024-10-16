@@ -514,56 +514,56 @@ Next, let’s install PM2, a process manager for Node.js applications. PM2 makes
 
         pm2 monit
 
-Step 4 — Setting Up Nginx as a Reverse Proxy Server
-===================================================
-
-Your application is running and listening on `localhost`, but you need to set up a way for your users to access it. We will set up the Nginx web server as a reverse proxy for this purpose.
-
-1. **Edit Nginx Configuration**
-
-   Open your Nginx configuration file for editing:
-
-   .. code-block:: console
-
-      sudo nano /etc/nginx/sites-available/default
-
-   Within the `server` block, you should have an existing `location /` block. Replace the contents of that block with the following configuration:
-
-   .. code-block:: nginx
-
-      server {
-      ...
-          location / {
-              proxy_pass http://localhost:3000;
-              proxy_http_version 1.1;
-              proxy_set_header Upgrade $http_upgrade;
-              proxy_set_header Connection 'upgrade';
-              proxy_set_header Host $host;
-              proxy_cache_bypass $http_upgrade;
-          }
-      ...
-      }
-
-   This configures the server to respond to requests at its root. Assuming our server is available at `example.com`, accessing `https://example.com/` via a web browser would send the request to `hello.js`, listening on port `3000` at `localhost`.
-
-
-
-2. **Test Nginx Configuration**
-
-   Make sure you didn’t introduce any syntax errors by typing:
-
-   .. code-block:: console
-
-      sudo nginx -t
-
-3. **Restart Nginx**
-
-   Restart Nginx to apply the changes:
-
-   .. code-block:: console
-
-      sudo systemctl restart nginx
-
+   Step 4 — Setting Up Nginx as a Reverse Proxy Server
+   ===================================================
+   
+   Your application is running and listening on `localhost`, but you need to set up a way for your users to access it. We will set up the Nginx web server as a reverse proxy for this purpose.
+   
+   1. **Edit Nginx Configuration**
+   
+      Open your Nginx configuration file for editing:
+   
+      .. code-block:: console
+   
+         sudo nano /etc/nginx/sites-available/default
+   
+      Within the `server` block, you should have an existing `location /` block. Replace the contents of that block with the following configuration:
+   
+      .. code-block:: nginx
+   
+         server {
+         ...
+             location / {
+                 proxy_pass http://localhost:3000;
+                 proxy_http_version 1.1;
+                 proxy_set_header Upgrade $http_upgrade;
+                 proxy_set_header Connection 'upgrade';
+                 proxy_set_header Host $host;
+                 proxy_cache_bypass $http_upgrade;
+             }
+         ...
+         }
+   
+      This configures the server to respond to requests at its root. Assuming our server is available at `example.com`, accessing `https://example.com/` via a web browser would send the request to `hello.js`, listening on port `3000` at `localhost`.
+   
+   
+   
+   2. **Test Nginx Configuration**
+   
+      Make sure you didn’t introduce any syntax errors by typing:
+   
+      .. code-block:: console
+   
+         sudo nginx -t
+   
+   3. **Restart Nginx**
+   
+      Restart Nginx to apply the changes:
+   
+      .. code-block:: console
+   
+         sudo systemctl restart nginx
+   
 
 
 
