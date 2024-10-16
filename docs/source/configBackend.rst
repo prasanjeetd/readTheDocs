@@ -390,24 +390,7 @@ To connect to the instance, go to the **Connect** tab in the AWS Management Cons
    1. **Creating a Sample Application or Cloning a Project*
 
 
-1. **Create a Sample Application**
-
-   To create a simple Node.js application, first navigate to your home directory and then create a new file using `nano` or your preferred text editor:
-
-   .. code-block:: console
-
-        cd ~
-        nano hello.js
-
-   Add the following code to `hello.js`:
-
-   .. code-block:: javascript
-
-      console.log('Hello, World!');
-
-   Save and close the file. You now have a basic Node.js application.
-
-2. **Clone an Existing Project**
+1. **upload Node Application**
 
    Alternatively, you can clone an existing project from a repository using `git`. Replace `httpsurl` with the actual URL of the repository:
 
@@ -491,6 +474,7 @@ Next, let’s install PM2, a process manager for Node.js applications. PM2 makes
    .. code-block:: console
 
       sudo systemctl start pm2-sammy
+   If at this point you encounter an error, you may need to reboot, which you can achieve with sudo reboot.
 
    Check the status of the systemd unit:
 
@@ -541,7 +525,7 @@ Your application is running and listening on `localhost`, but you need to set up
 
    .. code-block:: console
 
-      sudo nano /etc/nginx/sites-available/example.com
+      sudo nano /etc/nginx/sites-available/default
 
    Within the `server` block, you should have an existing `location /` block. Replace the contents of that block with the following configuration:
 
@@ -562,28 +546,9 @@ Your application is running and listening on `localhost`, but you need to set up
 
    This configures the server to respond to requests at its root. Assuming our server is available at `example.com`, accessing `https://example.com/` via a web browser would send the request to `hello.js`, listening on port `3000` at `localhost`.
 
-2. **Optional: Add Additional Location Blocks**
 
-   You can add additional `location` blocks to the same `server` block to provide access to other applications on the same server:
 
-   .. code-block:: nginx
-
-      server {
-      ...
-          location /app2 {
-              proxy_pass http://localhost:3001;
-              proxy_http_version 1.1;
-              proxy_set_header Upgrade $http_upgrade;
-              proxy_set_header Connection 'upgrade';
-              proxy_set_header Host $host;
-              proxy_cache_bypass $http_upgrade;
-          }
-      ...
-      }
-
-   This block allows access to another application running on port `3001` via `https://example.com/app2`.
-
-3. **Test Nginx Configuration**
+2. **Test Nginx Configuration**
 
    Make sure you didn’t introduce any syntax errors by typing:
 
@@ -591,7 +556,7 @@ Your application is running and listening on `localhost`, but you need to set up
 
       sudo nginx -t
 
-4. **Restart Nginx**
+3. **Restart Nginx**
 
    Restart Nginx to apply the changes:
 
