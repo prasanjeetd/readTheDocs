@@ -48,7 +48,7 @@ Contents
    usage
    configFrontend
    configBackend
-   Deploying a Next.js App to ECS Using ECR
+   nextjs_ecr_ecs
 
    
    
